@@ -3,10 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages, auth
 
 
-def home(request):
-    return render(request, 'home.html')
-
-
 def login(request):
     if not request.user.is_authenticated:
         if request.method == 'POST':

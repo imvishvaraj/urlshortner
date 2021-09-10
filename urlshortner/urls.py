@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from authentication.views import home, login, signup, logout
-from urlhandler.views import dashboard
+from authentication.views import login, signup, logout
+from urlhandler.views import dashboard, generate, home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +26,6 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('logout/', logout, name='logout'),
     path('dashboard/', dashboard, name='dashboard'),
+    path('generate/', generate, name='generateurl'),
+    path('<str:query>/', home, name='home')
 ]
